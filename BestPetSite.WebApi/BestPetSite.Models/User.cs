@@ -3,7 +3,7 @@ using Dapper.Contrib.Extensions;
 
 namespace BestPetSite.Models
 {
-    [Table("User")]
+    [Table("[Users]")]
     public class User
     {
         public int Id { get; set; }

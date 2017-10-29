@@ -49,8 +49,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="BestPetSite\CustomerRepository.cs" />
+    <Compile Include="BestPetSite\ICustomerRepository.cs" />
+    <Compile Include="BestPetSite\IPetRepository.cs" />
     <Compile Include="BestPetSite\IUserRepository.cs" />
+    <Compile Include="BestPetSite\IVeterinaryServiceRepository.cs" />
+    <Compile Include="BestPetSite\PetRepository.cs" />
     <Compile Include="BestPetSite\UserRepository.cs" />
+    <Compile Include="BestPetSite\VeterinaryServiceRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

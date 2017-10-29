@@ -1,17 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Extensions.Compression.Core.Compressors;
 using System.Web.Http;
+using Microsoft.AspNet.WebApi.Extensions.Compression.Server;
+using Newtonsoft.Json.Serialization;
 
 namespace BestPetSite.WebApi
 {
-    public static class WebApiConfig
+    public partial class Startup
     {
-        public static void Register(HttpConfiguration config)
+        public void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            config.MessageHandlers.Insert(0,
+                new ServerCompressionHandler(new GZipCompressor(), new DeflateCompressor()));
 
-            // Web API routes
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
+                new CamelCasePropertyNamesContractResolver();
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
