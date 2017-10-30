@@ -10,7 +10,7 @@ using BestPetSite.WebApi.Controllers.Base;
 
 namespace BestPetSite.WebApi.Controllers
 {
-    [RoutePrefix("customer")]
+    [RoutePrefix("customers")]
     public class CustomerController : BaseController
     {
         public CustomerController(IUnitOfWork unit) : base(unit)
