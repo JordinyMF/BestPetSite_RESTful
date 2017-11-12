@@ -9,9 +9,9 @@ using BestPetSite.WebApi.Controllers.Base;
 
 namespace BestPetSite.WebApi.Controllers
 {
-    public class VeterinaryServiceController : BaseController
+    public class VeterinaryServicesController : BaseController
     {
-        public VeterinaryServiceController(IUnitOfWork unit) : base(unit)
+        public VeterinaryServicesController(IUnitOfWork unit) : base(unit)
         {
         }
     }

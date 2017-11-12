@@ -1,6 +1,8 @@
-﻿using System.Security.Claims;
+﻿using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using BestPetSite.UnitOfWork;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 
 namespace BestPetSite.WebApi.Provider
@@ -29,10 +31,45 @@ namespace BestPetSite.WebApi.Provider
 
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
             identity.AddClaim(new Claim("sub", context.UserName));
-            
 
-            context.Validated(identity);
+            //Response Custom
+            var properties = new AuthenticationProperties(new Dictionary<string, string>
+            {
+                {
+                    "id", user.Id.ToString()
+                },
+                {
+                    "email", user.Email
+                },
+                {
+                    "firstName", user.FirstName
+                },
+                {
+                    "lastName", user.LastName
+                },
+                {
+                    "password", user.Password
+                },
+                {
+                    "status", user.Status.ToString()
+                }
+            });
+
+            var ticket = new AuthenticationTicket(identity, properties);
+            context.Validated(ticket);
+            
         }
 
+        public override Task TokenEndpoint(OAuthTokenEndpointContext context)
+        {
+            foreach (KeyValuePair<string, string> property in context.Properties.Dictionary)
+            {
+                //removed .issued and .expires parameter
+                if (!property.Key.StartsWith("."))
+                    context.AdditionalResponseParameters.Add(property.Key, property.Value);
+            }
+
+            return Task.FromResult<object>(null);
+        }
     }
 }

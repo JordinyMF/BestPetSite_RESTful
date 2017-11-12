@@ -16,8 +16,8 @@ namespace BestPetSite.WebApi
             var OAuthServerOptions = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
+                TokenEndpointPath = new PathString("/bestpetsite/api/v1/token"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(20),
                 Provider = new SimpleAuthorizationServerProvider()
             };
 

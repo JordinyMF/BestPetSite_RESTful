@@ -5,6 +5,7 @@ using BestPetSite.WebApi.Models.Dto;
 
 namespace BestPetSite.WebApi.Controllers.Base
 {
+   
     public class BaseController : ApiController
     {
         protected readonly IUnitOfWork _unit;
@@ -12,7 +13,7 @@ namespace BestPetSite.WebApi.Controllers.Base
         {
             _unit = unit;
         }
-
+/*
         public IHttpActionResult AjaxResultSuccessNoParam()
         {
             return Json(
@@ -52,7 +53,7 @@ namespace BestPetSite.WebApi.Controllers.Base
                     SuccessList = successList,
                     Exception = exception
                 });
-        }
+        }*/
 
     }
 }

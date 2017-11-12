@@ -145,9 +145,12 @@
     <Compile Include="App_Start\TokenConfiguration.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
-    <Compile Include="Controllers\CustomerController.cs" />
-    <Compile Include="Controllers\PetController.cs" />
-    <Compile Include="Controllers\VeterinaryServiceController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\PetsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\VeterinaryServicesController.cs" />
+    <Compile Include="Models\Dto\DataResultDto.cs" />
+    <Compile Include="Models\Dto\ErrorDto.cs" />
     <Compile Include="Models\Dto\ResponseDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\SimpleAuthorizationServerProvider.cs" />
@@ -155,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

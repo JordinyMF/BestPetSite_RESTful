@@ -9,10 +9,13 @@ using BestPetSite.WebApi.Controllers.Base;
 
 namespace BestPetSite.WebApi.Controllers
 {
-    public class PetController  : BaseController
+    [RoutePrefix("bestpetsite/api/v1/pets")]
+    public class PetsController  : BaseController
     {
-        public PetController(IUnitOfWork unit) : base(unit)
+        public PetsController(IUnitOfWork unit) : base(unit)
         {
         }
+
+
     }
 }
