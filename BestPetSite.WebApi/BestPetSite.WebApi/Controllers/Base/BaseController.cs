@@ -15,6 +15,7 @@ namespace BestPetSite.WebApi.Controllers.Base
             _unit = unit;
         }
 /*
+ * 
         public IHttpActionResult AjaxResultSuccessNoParam()
         {
             return Json(
