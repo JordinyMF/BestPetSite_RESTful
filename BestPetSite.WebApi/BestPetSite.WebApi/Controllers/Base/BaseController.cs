@@ -6,6 +6,7 @@ using BestPetSite.WebApi.Models.Dto;
 namespace BestPetSite.WebApi.Controllers.Base
 {
    
+    [Authorize]
     public class BaseController : ApiController
     {
         protected readonly IUnitOfWork _unit;

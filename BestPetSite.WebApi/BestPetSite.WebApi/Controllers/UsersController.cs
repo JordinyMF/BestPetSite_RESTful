@@ -61,7 +61,7 @@ namespace BestPetSite.WebApi.Controllers
             return Ok(dataResult);
 
         }
-
+        [AllowAnonymous]
         [Route("")]
         [HttpPost]
         public IHttpActionResult Post(User user)

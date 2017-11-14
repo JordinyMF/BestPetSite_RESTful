@@ -8,7 +8,6 @@ using BestPetSite.WebApi.Models.Dto;
 namespace BestPetSite.WebApi.Controllers
 {
     [RoutePrefix("bestpetsite/api/v1/customers")]
-    [Authorize]
     public class CustomersController : BaseController
     {
         public CustomersController(IUnitOfWork unit) : base(unit)
